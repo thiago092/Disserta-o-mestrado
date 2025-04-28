@@ -1,0 +1,31 @@
+\chapter{Resultados}
+\label{sec:resultados}
+
+A Tabela \ref{tab:comparativo} apresenta uma análise detalhada do desempenho do modelo UViT clássico comparado com suas versões modificadas, aplicadas a conjuntos de dados pediátricos, adultos e combinados. Este comparativo inclui mudanças percentuais nas métricas de desempenho Erro Médio Absoluto (MAE), Erro Quadrático Médio Raiz (RMSE) e Coeficiente de Determinação \( R^2 \), destacando tanto melhorias quanto regressões em relação ao modelo baseline.
+
+\begin{table}[htbp]
+\centering
+\small % Diminui a fonte da tabela
+\caption{Comparativo das variações percentuais em métricas de desempenho entre o modelo UViT Clássico e a versão modificada UViT RoBERTa, aplicadas a diferentes conjuntos de dados}
+\label{tab:comparativo}
+\begin{tabular}{lcccc}
+\toprule
+Modelo & Base de Dados & Mudança\%MAE & Mudança\%RMSE & Mudança\%\( R^2 \) \\
+\midrule
+Baseline(UViT) & Echonet & 5,88 & 8,38 & 0,51 \\ 
+UViT RoBERTa & Echonet & 4,84 (-17,69\%) & 6,32 (-24,58\%) & 0,67 (+31,37\%) \\ 
+UViT RoBERTa & Echoped & 5,72 (-2,72\%) & 7,23 (-13,72\%) & 0,73 (+43,14\%) \\ 
+UViT RoBERTa & Echonet e Echoped & 6,46 (+9,86\%) & 8,64 (+3,10\%) & 0,59 (+4,82\%) \\ 
+\bottomrule
+\end{tabular}
+\end{table}
+
+O modelo UViT clássico, conforme proposto por \cite{Reynald}, foi aplicado aos conjuntos de dados Echonet, apresentando um Erro Médio Absoluto (MAE) de 5,88, um Erro Quadrático Médio (RMSE) de 8,38 e um coeficiente \( R^2 \) de 0,51. Esses resultados fornecem uma base quantitativa para avaliar o desempenho do modelo clássico. Em contrapartida, a arquitetura UViT modificada, que inclui o modelo UViT RoBERTa, demonstrou um desempenho distinto ao ser aplicada em um conjunto de dados de pacientes adultos, quando comparada à versão clássica de UViT definida por \cite{Reynald} como Baseline.
+
+A UViT RoBERTa, em particular, destacou-se por sua capacidade de oferecer resultados mais precisos e generalizáveis em relação ao baseline, apresentando um desempenho quantificável em uma melhoria de 17,68\% no MAE, 24,58\% no RMSE e um acréscimo de 31,37\% no coeficiente \(R^2\). Essas melhorias significam não apenas uma maior precisão nas estimativas da fração de ejeção cardíaca, mas também um avanço substancial na capacidade do modelo de explicar a variabilidade dos dados de saída em relação à variabilidade dos dados de entrada. O aumento de 31,37\% no \(R^2\), especificamente, indica que o modelo UViT RoBERTa pode capturar uma porção muito maior da variância nos dados cardíacos, resultando em previsões que estão mais próximas dos valores reais observados. Essa característica é importante para aplicações clínicas, onde a precisão e a confiabilidade das previsões podem impactar diretamente o diagnóstico e o tratamento de condições cardíacas.
+
+Os modelos UViT RoBERTa foram aplicados ao conjunto de dados Echoped pediátricos, revelando variações nos resultados. O UViT RoBERTa obteve um MAE de 5,72, RMSE de 7,23 e um \( R^2 \) de 0,73. Esses dados indicam uma superioridade do UViT RoBERTa em termos de precisão e consistência na predição da fração de ejeção, sugerindo uma maior eficácia na captura das nuances e variabilidades dos dados Echoped. A alta correlação entre os valores previstos e os observados, refletida pelo \( R^2 \) elevado, destaca a utilidade do UViT RoBERTa em ambientes clínicos que demandam alta precisão diagnóstica.
+
+Ao analisar os resultados do modelo UViT RoBERTa com os dados combinados de Echonet e Echoped, observamos uma variação nos desempenhos. O modelo UViT RoBERTa registrou um MAE de 6,46, com um aumento de 9,86\%, e um RMSE de 8,64, com um acréscimo de 3,10\%. Notavelmente, o coeficiente \( R^2 \) alcançou 0,59, indicando uma melhoria de 4,82\% em comparação ao modelo base. O aumento no \( R^2 \), apesar dos aumentos no MAE e no RMSE, sugere que o modelo foi capaz de capturar melhor a variação geral dos dados.
+
+Os resultados apresentados demonstram a eficácia das modificações no modelo UViT, especialmente com a integração da arquitetura RoBERTa. As melhorias  nas métricas de desempenho, como MAE, RMSE e \( R^2 \), evidenciam a capacidade aprimorada do modelo UViT RoBERTa em fornecer previsões mais precisas e confiáveis, essenciais para aplicações clínicas. A habilidade do modelo em generalizar sobre diferentes conjuntos de dados, incluindo pediátricos e adultos, destaca sua versatilidade e robustez. Além disso, a capacidade de capturar variações amplas nos dados cardíacos é particularmente relevante para a prática clínica, onde a compreensão abrangente dos padrões de dados pode melhorar significativamente a precisão diagnóstica e a tomada de decisões terapêuticas.
